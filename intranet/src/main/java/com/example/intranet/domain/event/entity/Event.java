@@ -1,5 +1,6 @@
 package com.example.intranet.domain.event.entity;
 
+import com.example.intranet.domain.mapping.entity.MemberEvent;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -31,5 +34,6 @@ public class Event {
 
     private LocalDate workDate; // 일정 날짜
 
-
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MemberEvent> memberEvents = new ArrayList<>();
 }

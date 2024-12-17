@@ -1,5 +1,7 @@
 package com.example.intranet.domain.member.entity;
 
+import com.example.intranet.domain.mapping.entity.MemberAttendance;
+import com.example.intranet.domain.mapping.entity.MemberEvent;
 import com.example.intranet.domain.member.constants.Gender;
 import com.example.intranet.domain.member.constants.Position;
 import com.example.intranet.domain.member.constants.Role;
@@ -9,6 +11,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -46,6 +50,12 @@ public class Member {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 60)
     private Position position;
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MemberAttendance> memberAttendances = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MemberEvent> memberEvents = new ArrayList<>();
 
 }
 
