@@ -1,5 +1,6 @@
 package com.example.intranet.domain.member.entity;
 
+import com.example.intranet.domain.common.BaseEntity;
 import com.example.intranet.domain.mapping.entity.MemberAttendance;
 import com.example.intranet.domain.mapping.entity.MemberEvent;
 import com.example.intranet.domain.member.constants.Gender;
@@ -20,7 +21,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(generator = "uuid2")

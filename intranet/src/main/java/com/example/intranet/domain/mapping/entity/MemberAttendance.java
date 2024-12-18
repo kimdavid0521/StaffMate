@@ -1,11 +1,12 @@
 package com.example.intranet.domain.mapping.entity;
 
 import com.example.intranet.domain.attendance.entity.Attendance;
+import com.example.intranet.domain.common.BaseEntity;
 import com.example.intranet.domain.member.entity.Member;
 import jakarta.persistence.*;
 
 @Entity
-public class MemberAttendance {
+public class MemberAttendance extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
