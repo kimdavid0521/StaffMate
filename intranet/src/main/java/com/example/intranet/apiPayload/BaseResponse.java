@@ -4,19 +4,20 @@ import com.example.intranet.apiPayload.code.BaseCode;
 import com.example.intranet.apiPayload.code.status.SuccessStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-@JsonProperty({"isSuccess", "code", "message", "result"})
+@JsonPropertyOrder({"isSuccess", "code", "message", "result"})
 public class BaseResponse<T> {
 
     @JsonProperty("isSuccess")
     private final Boolean isSuccess;
     private final String code;
     private final String message;
-    @JsonProperty(JsonInclude.Include.NON_NULL)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private T result;
 
     // 성공시 응답 생성
