@@ -27,5 +27,4 @@ public class MemberEvent {
     @JoinColumn(name = "event_id")
     private Event event;
 
-
 }
