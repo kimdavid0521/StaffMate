@@ -1,5 +1,6 @@
 package com.example.intranet.domain.event.entity;
 
+import com.example.intranet.domain.common.BaseEntity;
 import com.example.intranet.domain.mapping.entity.MemberEvent;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Event {
+public class Event extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
