@@ -6,6 +6,7 @@ import com.example.intranet.domain.mapping.entity.MemberEvent;
 import com.example.intranet.domain.member.constants.Gender;
 import com.example.intranet.domain.member.constants.Position;
 import com.example.intranet.domain.member.constants.Role;
+import com.example.intranet.dto.member.MemberRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -58,5 +59,12 @@ public class Member extends BaseEntity {
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MemberEvent> memberEvents = new ArrayList<>();
 
+
+    // 멤버 정보 업데이트 메서드
+    public void update(MemberRequestDTO.UpdateMemberDTO updateMemberDTO) {
+        this.username = updateMemberDTO.getUsername();
+        this.email = updateMemberDTO.getEmail();
+        this.phone = updateMemberDTO.getPhone();
+    }
 }
 
