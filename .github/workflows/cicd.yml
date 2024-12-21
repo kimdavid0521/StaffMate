@@ -59,7 +59,7 @@ jobs:
     # Spring Boot Build
     - name: Spring Boot Build
       # working-directory: ./intranet # 작업 디렉토리 설정
-      run: ./gradlew clean build -x test
+      run: ./intranet/gradlew clean build -x test
 
 
 #----------------- Docker --------
