@@ -36,7 +36,15 @@ jobs:
         pwd
         ls -la
 
+   # 디렉토리 내부 구조 확인
+    - name: Show src/main/resources directory
+      run: |
+        ls -la ./src/main/resources
 
+   # application.yml 파일이 존재하는지 확인
+    - name: Check if application.yml exists
+      run: |
+        ls -la ./src/main/resources/application.yml
     #Setting yml
     - name: Convert to dev YML
       run: |
