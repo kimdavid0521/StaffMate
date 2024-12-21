@@ -37,18 +37,18 @@ jobs:
         ls -la
 
    # 디렉토리 내부 구조 확인
-    - name: Show src/main/resources directory
+    - name: Show intranet/src/main/resources directory
       run: |
-        ls -la ./src/main/resources
+        ls -la ./intranet/src/main/resources
 
    # application.yml 파일이 존재하는지 확인
     - name: Check if application.yml exists
       run: |
-        ls -la ./src/main/resources/application.yml
+        ls -la ./intranet/src/main/resources/application.yml
     #Setting yml
     - name: Convert to dev YML
       run: |
-        if [ -e "./src/main/resources/application.yml" ]; then rm ./src/main/resources/application.yml; fi
+        if [ -e "./intranet/src/main/resources/application.yml" ]; then rm ./intranet/src/main/resources/application.yml; fi
         echo "${{ secrets.APPLICATION_YML }}" > ./src/main/resources/application.yml
         
     #gradlew chmod
