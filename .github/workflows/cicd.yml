@@ -54,7 +54,7 @@ jobs:
         
     #gradlew chmod
     - name: Grant execute permission for gradlew 
-      run: chmod +x ./gradlew
+      run: chmod +x ./intranet/gradlew
       
     # Spring Boot Build
     - name: Spring Boot Build
